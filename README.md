@@ -9,4 +9,6 @@ Simple React Demo
 
 # Starting
 
-Run yarn run build, then yarn run serve
+- Run `yarn`
+- Run `yarn run build`
+` Run `yarn run serve`
