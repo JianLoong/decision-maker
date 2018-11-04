@@ -10,5 +10,4 @@ Simple React Demo
 # Starting
 
 - Run `yarn`
-- Run `yarn run build`
-` Run `yarn run serve`
+- Run `yarn run dev-server`
