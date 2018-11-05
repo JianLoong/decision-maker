@@ -10,7 +10,7 @@
     "build": "webpack",
     "dev-server": "webpack-dev-server",
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -b master -d build"
+    "deploy": "gh-pages -b gh-pages -d public"
   },
   "dependencies": {
     "babel-cli": "6.24.1",
