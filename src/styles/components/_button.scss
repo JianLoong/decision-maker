@@ -1,8 +1,8 @@
 .big-button {
-  background-color: $accent-colour;
+  background-color: $accent-color;
   border: none;
   //SASS has reference functions
-  border-bottom: 0.6rem solid darken($accent-colour, 10%);
+  border-bottom: 0.6rem solid darken($accent-color, 10%);
   color: white;
   font-weight: bold;
   font-size: $l-size;
@@ -17,9 +17,9 @@
 
 // Small buttons
 .button {
-    background-color: $accent-colour;
+    background-color: $accent-color;
     border: none;
-    border-bottom: .3rem solid darken($accent-colour, 10%);
+    border-bottom: .3rem solid darken($accent-color, 10%);
     color: white;
     font-weight: 500;
     padding: $s-size;

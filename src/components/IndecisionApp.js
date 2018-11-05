@@ -32,7 +32,8 @@ export default class IndecisionApp extends React.Component {
     //alert(this.state.options[randomNum]);
     const option = this.state.options[randomNum];
     this.setState(prevState => ({
-      selectedOption: this.state.options[randomNum]
+      //console.log(selectedOption);
+      selectedOption: option
     }));
   };
 
@@ -43,7 +44,7 @@ export default class IndecisionApp extends React.Component {
     }
 
     if (this.state.options.indexOf(option) > -1) {
-      return "There option already";
+      return "The option already exist.";
     }
 
     //Notice how it is ( then {
@@ -83,7 +84,7 @@ export default class IndecisionApp extends React.Component {
 
   render() {
     const title = "Decision Making App";
-    const subtitle = "Put your life in the hands of the computer";
+    const subtitle = "Put your life in the hands of RNG";
 
     return (
       <div>
@@ -93,16 +94,18 @@ export default class IndecisionApp extends React.Component {
             hasOptions={this.state.options.length > 0}
             handlePick={this.handlePick}
           />
-          <Options
-            options={this.state.options}
-            handleDeleteOptions={this.handleDeleteOptions}
-            handleDeleteOption={this.handleDeleteOption}
-          />
-          <AddOption handleAddOption={this.handleAddOption} />
-          <OptionModal
-            selectedOption={this.state.selectedOption}
-            handleClearSelectedOption={this.handleClearSelectedOption}
-          />
+          <div className="widget">
+            <Options
+              options={this.state.options}
+              handleDeleteOptions={this.handleDeleteOptions}
+              handleDeleteOption={this.handleDeleteOption}
+            />
+            <AddOption handleAddOption={this.handleAddOption} />
+            <OptionModal
+              selectedOption={this.state.selectedOption}
+              handleClearSelectedOption={this.handleClearSelectedOption}
+            />
+          </div>
         </div>
       </div>
     );
