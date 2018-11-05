@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Jian Liew",
+  "homepage": "https://jianloong.github.io/decision-app",
   "license": "MIT",
   "scripts": {
     "serve": "live-server public/",
     "build": "webpack",
-    "dev-server": "webpack-dev-server"
+    "dev-server": "webpack-dev-server",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -b master -d build"
   },
   "dependencies": {
     "babel-cli": "6.24.1",
@@ -17,6 +20,7 @@
     "babel-preset-env": "1.5.2",
     "babel-preset-react": "6.24.1",
     "css-loader": "0.28.4",
+    "gh-pages": "^2.0.1",
     "live-server": "^1.2.0",
     "react": "15.6.1",
     "react-dom": "15.6.1",
