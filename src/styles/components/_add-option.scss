@@ -10,19 +10,42 @@
     border-bottom: .3rem solid darken($dark-primary-color, 10%);
     color: white;
     font-weight: 500;
-    padding: $s-size;
+    //padding: $s-size;
     background-color: $dark-primary-color;
 }
 
 .add-option {
     display: flex;
-    padding: $m-size;
+    //Stack things vertically
+    flex-direction: row;
+    padding: $s-size;
 }
 
 .add-option-input{
     flex-grow: 1;
     background: $text-or-icon;
     border-bottom: .3rem solid darken($text-or-icon, 20%);
+    //margin-right: $s-size;
+    //margin: 0 0 $s-size 0;
+    //margin: 0 $-size 0 0 ;
     margin-right: $s-size;
-    padding: $s-size;
+    //margin-bottom: $s-size;
+    padding: $s-size; 
+}
+
+//Using media queries - Up to 45 rem set these styles
+@media (max-width: $desktop-breakpoint) {
+    .add-option {
+        flex-direction: column;
+    }
+
+    .add-option-button{
+        padding: 1rem;
+    }
+
+    .add-option-input {
+        margin-bottom: $s-size;
+        //padding-bottom: $s-size;
+        margin-right: 0;
+    }
 }

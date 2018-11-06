@@ -9,6 +9,7 @@
 .header__title {
     font-size: $l-size;
     margin: 0;
+    padding-bottom: 1rem;
 }
 
 .header__subtitle {
@@ -16,4 +17,15 @@
     font-size: $m-size;
     font-weight: 500;
     margin: 0;
+}
+
+@media (max-width: 45rem) {
+    .header__title{
+        font-size: $m-size;
+        padding-bottom: 1rem;
+    }
+
+    .header__subtitle{
+        font-size: $s-size;
+    }
 }
