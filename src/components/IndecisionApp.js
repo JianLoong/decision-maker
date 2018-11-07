@@ -63,7 +63,6 @@ export default class IndecisionApp extends React.Component {
         this.setState(() => ({ options }));
       }
       //Fetching data
-      console.log("Did mount");
     } catch (e) {
       // Do nothing if json data is invalid
     }
@@ -74,13 +73,10 @@ export default class IndecisionApp extends React.Component {
     if (prevState.options.length !== this.state.options.length) {
       const json = JSON.stringify(this.state.options);
       localStorage.setItem("options", json);
-      console.log("Did Update");
     }
   }
 
-  componentWillUnmount() {
-    console.log("Component will unmount");
-  }
+  componentWillUnmount() {}
 
   render() {
     const title = "Decision Making App";

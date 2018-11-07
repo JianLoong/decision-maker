@@ -1,5 +1,3 @@
-console.log("App.js is running");
-
 const app = {
   title: "My Indecision App",
   subtitle: "This is the subtitle",
@@ -7,28 +5,24 @@ const app = {
 };
 
 const removeAll = () => {
-  console.log("Remove all");
   app.options = [];
   renderTemplate();
 };
 
 const onFormSubmit = e => {
   e.preventDefault();
-  //console.log('Form submit');
 
   const option = e.target.elements.option.value;
 
   if (option) {
     app.options.push(option);
     e.target.elements.option.value = "";
-    console.log(option);
     renderTemplate();
   }
 };
 
 const onMakeDecision = () => {
   const randomNum = Math.floor(Math.random() * app.options.length);
-  console.log(randomNum);
   const option = app.options[randomNum];
   alert(option);
 };
@@ -49,12 +43,17 @@ const renderTemplate = () => {
           ? "Here are your options"
           : "No Options : "}
       </p>
-      <button disabled={app.options.length === 0? true : false} onClick={onMakeDecision}>What should I do?</button>
+      <button
+        disabled={app.options.length === 0 ? true : false}
+        onClick={onMakeDecision}
+      >
+        What should I do?
+      </button>
       <p>{app.options.length}</p>
       <ol>
-      {
-        app.options.map((option) => <li key={option}>{option}</li>)
-      }
+        {app.options.map(option => (
+          <li key={option}>{option}</li>
+        ))}
       </ol>
       {/*
         numbers.map((number) => {

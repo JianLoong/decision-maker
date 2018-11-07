@@ -10,28 +10,24 @@ class Counter extends React.Component {
   }
 
   componentDidMount() {
-    const stringCount = localStorage.getItem('count');
+    const stringCount = localStorage.getItem("count");
     const count = parseInt(stringCount, 10);
     if (!isNaN(count)) {
-      this.setState(() => ({ count }))
+      this.setState(() => ({ count }));
     }
-    console.log("Did mount");
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.count != this.state.count) {
       //const json = JSON.stringify(this.state.count);
       localStorage.setItem("count", this.state.count);
-      console.log("Did Update");
     }
   }
 
-  componentWillUnmount() {
-
-  }
+  componentWillUnmount() {}
 
   handleAddOne() {
-    this.setState((prevState) => {
+    this.setState(prevState => {
       return {
         count: prevState.count + 1
       };
@@ -39,7 +35,7 @@ class Counter extends React.Component {
   }
 
   handleMinusOne() {
-    this.setState( (prevState) => ({
+    this.setState(prevState => ({
       count: prevState.count - 1
     }));
   }
@@ -47,7 +43,7 @@ class Counter extends React.Component {
   handleReset() {
     //Calls to setState are async
     //ES6 notice that it is => ()
-    this.setState( () => ({
+    this.setState(() => ({
       count: 0
     }));
   }
@@ -69,7 +65,7 @@ class Counter extends React.Component {
 //   count: 0
 //}
 
-ReactDOM.render(<Counter count={10}/>, document.getElementById("app"));
+ReactDOM.render(<Counter count={10} />, document.getElementById("app"));
 // let count = 0;
 // //It must be className instead of class.
 // //Inside JSX it becomes camelCase
